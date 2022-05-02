@@ -124,7 +124,7 @@ func ScrapeTarget(ctx context.Context, target string, config *config.Module, log
 	snmp.Retries = config.WalkParams.Retries
 	snmp.Timeout = config.WalkParams.Timeout
 	snmp.UseUnconnectedUDPSocket = config.WalkParams.UseUnconnectedUDPSocket
-	snmp.LocalAddr = *srcAddress + ":0"
+	snmp.LocalAddr = *srcAddress
 
 	var sent time.Time
 	snmp.OnSent = func(x *gosnmp.GoSNMP) {
